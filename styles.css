@@ -5,6 +5,7 @@ body {
   animation: change 15s ease infinite;
 }
 
+
 .title {
   text-align: center;
   color: white;
@@ -19,6 +20,7 @@ body {
   justify-content: center;
 }
 /* From Uiverse.io by htwarriors108 */
+
 .card {
   position: relative;
   width: 400px;
@@ -31,10 +33,12 @@ body {
   align-items: center;
   justify-content: space-evenly;
   box-shadow: 20px 20px 20px rgba(216, 216, 216, 0.5);
+  border-radius: 1.2em;
 }
 
 .card h1{
   font-family: "Papyrus", "Comic Sans MS", cursive;
+
   font-size: 2em;
   z-index: 10;
   text-align: center;
@@ -60,6 +64,9 @@ body {
   left: 0;
   background: linear-gradient(45deg, #ffbc00, #ff0058);
   border-radius: 1.2em;
+
+
+
 }
 
 .card::after {
@@ -124,7 +131,9 @@ body {
   font-size: 1.5em;
 }
 
-
+.card content {
+  filter: blur(20px);
+}
 @keyframes change {
   0% {
     background-position: 0% 50%;
