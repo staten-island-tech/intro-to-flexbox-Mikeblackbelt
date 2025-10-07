@@ -36,6 +36,30 @@ body {
   border-radius: 1.2em;
 }
 
+.cart {
+  position: ;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.cart .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 0.8em;
+}
+
+.cart{
+  background-color: rgb(255, 255, 255);
+  border-radius: 6.7px;
+  padding: 10px;
+  position: fixed;
+}
+
 .card h1{
   font-family: "Papyrus", "Comic Sans MS", cursive;
   font-size: 2em;
@@ -43,7 +67,7 @@ body {
   text-align: center;
 }
 
-.card img {
+.card img, .card video {
   width: 50%;
   height: 50%;
   object-fit: cover;
