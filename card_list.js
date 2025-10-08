@@ -1,0 +1,88 @@
+export default function card_list() {
+    return [
+        {
+            ttl: 'Plain Bagel',
+            cat: 'Bagel',
+            img: 'https://www.bing.com/th/id/OIP.t36v4DfuQhu_Vdpizf8HdgHaFy?w=256&h=211&c=8&rs=1&qlt=90&o=6&cb=12&pid=3.1&rm=2',
+            id: 'plain-bagel',
+            price: '$3',
+        },
+        {
+            ttl: 'cool bagel',
+            cat: 'Bagel',
+            img: 'https://th.bing.com/th/id/OIP.CKY2yPBZcHFoDcWevtq93wHaG9?w=208&h=196&c=7&r=0&o=7&cb=12&pid=1.7&rm=3',
+            id: 'everything-bagel',
+            price: '$67',
+        },
+        {
+            ttl: 'Sesame Bagel',
+            cat: 'Bagel',
+            img: 'https://th.bing.com/th/id/OIP.6IEXvHCVO1cFLi-ruquz4wHaHt?w=189&h=197&c=7&r=0&o=7&cb=12&pid=1.7&rm=3',
+            id: 'sesame-bagel',
+            price: '$3',
+        },
+        {
+            ttl: 'Poppy Bagel',
+            cat: 'Bagel',
+            img: 'https://www.bing.com/th?id=OPHS.GCpNIDrzCdwwSg474C474&o=5&pid=21.1&w=148&h=148&qlt=100&dpr=1&bw=6&bc=FFFFFF&c=1&rs=1&rm=2',
+            id: 'poppy-seed-bagel',
+            price: '$67',
+        },
+        {
+            ttl: 'Raisin Bagel',
+            cat: 'Bagel',
+            img: 'https://media.istockphoto.com/id/1022667176/photo/bagel-and-salad-tomato-grape.jpg?s=612x612&w=0&k=20&c=L88iCIWmG4TOMXaaHybHHn3KoG_N6MZfh9VXZC9T0Y4=',
+            id: 'cinnamon-raisin-bagel',
+            price: '$3',
+        },
+        {
+            ttl: 'Onion Bagel',
+            cat: 'Bagel',
+            img: 'https://images.ctfassets.net/u4vv676b8z52/1EqxU3PilvGLgm3BbaHGOu/2b7f550cef8b45d30c50e4f2c9004b90/onions-cry-678x446.gif?fm=jpg&q=80&w=800&h=525&fit=fill',
+            id: 'onion-bagel',
+            price: '$67',
+        },
+        {
+            ttl: 'Garlic Bagel',
+            cat: 'Bagel',
+            img: 'https://th.bing.com/th?id=OPHS.iSIgTF0iJ%2b47tg474C474&w=146&h=140&c=17&pcl=f5f5f5&o=5&cb=12&pid=21.1',
+            id: 'garlic-bagel',
+            price: '$3',
+        },
+        {
+            ttl: 'Blue Bagel',
+            cat: 'Bagel',
+            img: 'https://th.bing.com/th/id/OIP.YxYKKPmwBML2beY4gCBV-AHaEx?w=260&h=180&c=7&r=0&o=7&cb=12&pid=1.7&rm=3',
+            id: 'blueberry-bagel',
+            price: '$67',
+        },
+        {
+            ttl: 'Cheese',
+            cat: 'Bagel',
+            img: 'https://bing.com/th?id=OSK.ba242d432dee4937101a62a25565da9a',
+            id: 'cheese bagel',
+            price: '$3',
+        },
+        {
+            ttl: 'yellow',
+            cat: 'Bagel',
+            img: 'https://tse1.mm.bing.net/th/id/OIP.ppg7u4xH-055QfqgoEk26QHaLH?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3',
+            id: 'asiago-cheese-bagel',
+            price: '$67',
+        },
+        {
+            ttl: 'Blurry Image',
+            cat: 'misc',
+            img: 'https://c8.alamy.com/comp/JXY4PY/abstract-blur-image-of-empty-walkway-to-the-green-garden-JXY4PY.jpg',
+            id: 'abstract-blur',
+            price: '$3',
+        },
+        {
+            ttl: ' Wheat',
+            cat: 'misc',
+            img: 'https://th.bing.com/th/id/OIP.4I8Wx7RMNknCZx-0kaBl6wHaE8?o=7&cb=12rm=3&rs=1&pid=ImgDetMain&o=7&rm=3',
+            id: 'wheat',
+            price: '$67',
+        },
+    ];
+}

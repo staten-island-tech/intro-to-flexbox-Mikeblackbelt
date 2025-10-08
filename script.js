@@ -1,5 +1,16 @@
+import card_list from './card_list.js';
+
 const container = document.getElementsByClassName('container')[0];
+const cart = document.getElementsByClassName('cart')[0];
+const counter = document.getElementsByClassName('cart')[1];
+const added = document.getElementById('item-list');
+
+let items = [];
+let cards = [];
+let cost = 0;
+
 console.log(container);
+
 
 class card {
     constructor ({ttl, cat, img=null, desc=null, id=null, price='$4'}) {
@@ -50,18 +61,19 @@ class card {
     }
 }
 
-const test_card = new card({
-    ttl: 'test',
-    cat: 'test',
-    img: 'https://c8.alamy.com/comp/JXY4PY/abstract-blur-image-of-empty-walkway-to-the-green-garden-JXY4PY.jpg',
-});
+for (let i=0; i<card_list().length; i++) {
+    let new_card = new card(card_list()[i]);
+    cards.push(new_card);
+    new_card.button.onclick = function() {
+        if (items.includes(new_card)) {
+            items = items.filter(item => item !== new_card);
+            cost -= parseInt(new_card.price.replace('$',''));
+        }
+        else {
+          items.push(new_card);
+        } 
+        console.log(items);
+    }
 
-for (let i=0; i<7; i++) {
-    let new_card = new card({
-        ttl: `test ${i}`,
-        cat: 'test',
-        img: 'https://c8.alamy.com/comp/JXY4PY/abstract-blur-image-of-empty-walkway-to-the-green-garden-JXY4PY.jpg',
-        price: `$${i+1}`,
-    });
     container.appendChild(new_card.card);
 }       
