@@ -5,13 +5,49 @@ body {
   animation: change 15s ease infinite;
 }
 
-
 .title {
   text-align: center;
-  color: white;
-  font-family: "Papyrus", "Comic Sans MS", cursive;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.title h1 {
+  font-family: 'Comic Neue', cursive;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #ffbc00, #ff0058);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.options {
   display: flex;
   justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.options span {
+  font-family: 'Comic Neue', cursive;
+  font-size: 1rem;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.options span:hover {
+  background-color: #ffffff;
+  color: #1e1e1e;
+  transform: translateY(-2px);
 }
 
 .container {
@@ -217,6 +253,7 @@ body {
 .card content {
   filter: blur(20px);
 }
+
 @keyframes change {
   0% {
     background-position: 0% 50%;

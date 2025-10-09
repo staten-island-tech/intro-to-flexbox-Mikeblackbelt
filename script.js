@@ -9,6 +9,14 @@ let items = [];
 let cards = [];
 let cost = 0;
 
+let displays = {
+    'Bagel': true,
+    'misc': true,
+}
+
+let bagel_Filter = document.getElementById('bagels');
+let misc_Filter = document.getElementById('misc');
+
 console.log(container);
 
 
@@ -61,8 +69,10 @@ class card {
     }
 }
 
-for (let i=0; i<card_list().length; i++) {
+function createCards() {
+    for (let i=0; i<card_list().length; i++) {
     let new_card = new card(card_list()[i]);
+    if (!displays[new_card.cat]) {continue;}
     cards.push(new_card);
     new_card.button.onclick = function() {
         if (items.includes(new_card)) {
@@ -76,4 +86,29 @@ for (let i=0; i<card_list().length; i++) {
     }
 
     container.appendChild(new_card.card);
-}       
+    }     
+}
+
+createCards();
+
+bagel_Filter.onclick = function() {
+    displays['Bagel'] = !displays['Bagel'];
+
+    if (!displays['Bagel'] & !displays['misc']) {displays['misc'] = true;}
+    bagel_Filter.style.color = !displays['Bagel'] ? 'grey' : 'white';
+    misc_Filter.style.color = !displays['misc'] ? 'grey' : 'white';
+    container.innerHTML = '';
+    cards = [];
+    createCards();
+}
+misc_Filter.onclick = function() {
+    displays['misc'] = !displays['misc'];
+        if (!displays['Bagel'] & !displays['misc']) {
+        displays['misc'] = true;
+    }
+    bagel_Filter.style.color = !displays['Bagel'] ? 'grey' : 'white';
+    misc_Filter.style.color = !displays['misc'] ? 'grey' : 'white';
+    container.innerHTML = '';
+    cards = [];
+    createCards();
+}
