@@ -2,7 +2,7 @@ import card_list from './card_list.js';
 
 const container = document.getElementsByClassName('container')[0];
 const cart = document.getElementsByClassName('cart')[0];
-const counter = document.getElementsByClassName('cart')[1];
+const counter = document.getElementById('count');
 const added = document.getElementById('item-list');
 
 let items = [];
@@ -78,10 +78,13 @@ function createCards() {
         if (items.includes(new_card)) {
             items = items.filter(item => item !== new_card);
             cost -= parseInt(new_card.price.replace('$',''));
+            
         }
         else {
           items.push(new_card);
+
         } 
+        counter.textContent = items.length;
         console.log(items);
     }
 
@@ -93,21 +96,19 @@ createCards();
 
 bagel_Filter.onclick = function() {
     displays['Bagel'] = !displays['Bagel'];
-
     if (!displays['Bagel'] & !displays['misc']) {displays['misc'] = true;}
-    bagel_Filter.style.color = !displays['Bagel'] ? 'grey' : 'white';
-    misc_Filter.style.color = !displays['misc'] ? 'grey' : 'white';
+    bagel_Filter.style.borderColor = !displays['Bagel'] ? 'grey' : 'white';
+    misc_Filter.style.borderColor = !displays['misc'] ? 'grey' : 'white';
     container.innerHTML = '';
     cards = [];
     createCards();
 }
+
 misc_Filter.onclick = function() {
     displays['misc'] = !displays['misc'];
-        if (!displays['Bagel'] & !displays['misc']) {
-        displays['misc'] = true;
-    }
-    bagel_Filter.style.color = !displays['Bagel'] ? 'grey' : 'white';
-    misc_Filter.style.color = !displays['misc'] ? 'grey' : 'white';
+    if (!displays['Bagel'] & !displays['misc']) {displays['Bagel'] = true; }
+    bagel_Filter.style.bordeColor = !displays['Bagel'] ? 'grey' : 'white';
+    misc_Filter.style.borderColor = !displays['misc'] ? 'grey' : 'white';
     container.innerHTML = '';
     cards = [];
     createCards();
