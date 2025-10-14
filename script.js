@@ -4,6 +4,10 @@ const container = document.getElementsByClassName('container')[0];
 const cart = document.getElementsByClassName('cart')[0];
 const counter = document.getElementById('count');
 const added = document.getElementById('item-list');
+const cart_container = document.getElementsByClassName('cart-container')[0];
+const cart_img = document.getElementById('cart_img');
+const total_price = document.getElementById('total-price');
+const checkout_btn = document.getElementById('checkout-btn');
 
 let items = [];
 let cards = [];
@@ -78,12 +82,11 @@ function createCards() {
         if (items.includes(new_card)) {
             items = items.filter(item => item !== new_card);
             cost -= parseInt(new_card.price.replace('$',''));
-            
         }
         else {
           items.push(new_card);
-
         } 
+        updateCart();
         counter.textContent = items.length;
         console.log(items);
     }
@@ -112,4 +115,34 @@ misc_Filter.onclick = function() {
     container.innerHTML = '';
     cards = [];
     createCards();
+}
+
+function updateCart() {
+    added.innerHTML = '';
+    cost = 0;
+    for (let i=0; i<items.length; i++) {
+        let li = document.createElement('li');
+        li.textContent = items[i].ttl + ' - ' + items[i].price;
+        added.appendChild(li);
+        cost += parseInt(items[i].price.replace('$',''));
+    }
+    total_price.textContent = cost.toFixed(2);
+    added.innerHTML = added.innerHTML || '<li>No items in cart</li>';
+    //this can be done in O(1) instead of O(n) but i dont feel like it, its effectively constant time bc worst case scenario is n=items.length which is < 100 regardless
+}
+
+cart.onclick = function() {
+    if (cart_container.style.display === 'block') {
+        cart_container.style.display = 'none';
+        cart_img.style.filter = 'invert(0)';
+    } else {
+        cart_container.style.display = 'block';
+        cart_img.style.filter = 'invert(1)';
+        total_price.textContent = cost.toFixed(2);
+    }
+    console.log(cart_container.style.display);
+}
+
+checkout_btn.onclick = function() {
+    window.close();
 }

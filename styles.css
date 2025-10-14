@@ -22,23 +22,24 @@ body {
 }
 
 .aboveTTL {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 90px;
+  height: 100px;
   background: linear-gradient(90deg, #56545e, #4f4652, #724b59);
   z-index: 1;
-  transform: skew(3deg,-3deg) translateY(-60px);
 }
 
 .title {
   text-align: center;
   margin-bottom: 20px;
+  top: -72px;
   position: relative;
   z-index: 2;
+  height: 85px;
+  backdrop-filter: blur(6px);
   background-color: rgba(66, 62, 62, 0.85);
-  transform: skew(3deg,-3deg) translateY(-20px);
+  transform: skew(1deg,-2deg);
 }
 
 .title h1 {
@@ -313,4 +314,62 @@ body {
 
 .card content {
   filter: blur(20px);
+}
+
+
+.cart-container {
+  position: fixed;
+  top: 100px; /* adjust as needed */
+  right: 30px;
+  width: 200px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.95);
+  color: #383232;
+  padding: 20px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+
+}
+
+.cart-container h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ff0058;
+  padding-bottom: 10px;
+  
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 8px;
+  text-decoration: none;
+  
+  border-bottom: 1px solid #ddd;
+}
+
+ul li {
+  list-style-type: armenian
+}
+
+#checkout-btn {
+  margin-top: 15px;
+  padding: 10px;
+  width: 100%;
+  background-color: #ff0058;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
