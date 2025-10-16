@@ -134,10 +134,10 @@ function updateCart() {
 cart.onclick = function() {
     if (cart_container.style.display === 'block') {
         cart_container.style.display = 'none';
-        cart_img.style.filter = 'invert(0)';
+        cart_img.style.filter = 'black';
     } else {
         cart_container.style.display = 'block';
-        cart_img.style.filter = 'invert(1)';
+        cart_img.style.color = 'grey';
         total_price.textContent = cost.toFixed(2);
     }
     console.log(cart_container.style.display);
